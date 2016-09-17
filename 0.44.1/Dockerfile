@@ -23,6 +23,4 @@ RUN echo  "load /usr/share/java/xalan2.jar"  >> /etc/osmosis/plexus.conf \
 RUN apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -u 1000 -m -g users -d /home/user -s /bin/bash -c "Docker image user" user 
-USER user
 WORKDIR /data

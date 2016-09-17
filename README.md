@@ -1,7 +1,6 @@
 osmosis with mapsforge support.
 
 * This image is based on Ubuntu 16.04.
-* Default user id - 1000:100
 * Default working folder /data
 
 # Usage
