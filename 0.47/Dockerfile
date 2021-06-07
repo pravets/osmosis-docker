@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 
 LABEL maintainer="Iosif Pravets \"github.com/pravets\""
 
-ENV OSMOSIS_VERSION=0.45
-ENV MAPSFORGE_VERSION=0.6.1
+ENV OSMOSIS_VERSION=0.47
+ENV MAPSFORGE_VERSION=0.16.0
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y
