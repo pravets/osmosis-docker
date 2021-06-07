@@ -6,6 +6,7 @@ ENV OSMOSIS_VERSION=0.45
 ENV MAPSFORGE_VERSION=0.6.1
 
 ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends wget
 
 # Install prebuilt Osmosis
@@ -13,8 +14,9 @@ RUN wget http://bretth.dev.openstreetmap.org/osmosis-build/osmosis-${OSMOSIS_VER
 RUN mkdir -p /usr/local/osmosis \
  && tar zxvf osmosis-${OSMOSIS_VERSION}.tgz -C /usr/local/osmosis
 # Install Osmosis Mapsforge Map Writer
-RUN wget http://ci.mapsforge.org/job/$MAPSFORGE_VERSION/lastSuccessfulBuild/artifact/mapsforge-map-writer/build/libs/mapsforge-map-writer-$MAPSFORGE_VERSION.jar \
- && mv mapsforge-map-writer-$MAPSFORGE_VERSION.jar /usr/local/osmosis
+
+RUN wget https://repo1.maven.org/maven2/org/mapsforge/mapsforge-map-writer/$MAPSFORGE_VERSION/mapsforge-map-writer-$MAPSFORGE_VERSION-jar-with-dependencies.jar \
+ && mv mapsforge-map-writer-$MAPSFORGE_VERSION-jar-with-dependencies.jar /usr/local/osmosis
 
 
 # https://github.com/mapsforge/mapsforge/issues/303
