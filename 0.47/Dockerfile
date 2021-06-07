@@ -31,8 +31,8 @@ RUN apt-get install -y --no-install-recommends default-jre-headless  \
     libcommons-dbcp-java \
     libcommons-pool-java \
     libjpf-java \
-    libmysql-java \
-    libnetty-3.9-java \
+    #libmysql-java \
+    #libnetty-3.9-java \
     libpostgis-java \
     libpostgresql-jdbc-java \ 
     libspring-beans-java \
