@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-LABEL maintainer="Iosif Pravets \"https://about.me/chihchun\"
+LABEL maintainer="Iosif Pravets \"github.com/pravets\""
 
 ENV OSMOSIS_VERSION=0.45
 ENV MAPSFORGE_VERSION=0.6.1
