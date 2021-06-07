@@ -1,4 +1,4 @@
-FROM osmtw/ubuntu
+FROM ubuntu/ubuntu:20.04
 
 MAINTAINER Rex Tsai "https://about.me/chihchun"
 
