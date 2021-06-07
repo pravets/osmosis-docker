@@ -16,12 +16,12 @@ RUN mkdir -p /usr/local/osmosis \
 # Install Osmosis Mapsforge Map Writer
 
 RUN wget https://repo1.maven.org/maven2/org/mapsforge/mapsforge-map-writer/$MAPSFORGE_VERSION/mapsforge-map-writer-$MAPSFORGE_VERSION-jar-with-dependencies.jar --no-check-certificate \
- && mv mapsforge-map-writer-$MAPSFORGE_VERSION-jar-with-dependencies.jar /usr/local/osmosis
+ && mv mapsforge-map-writer-$MAPSFORGE_VERSION-jar-with-dependencies.jar /usr/local/osmosis/lib/default
 
 
 # https://github.com/mapsforge/mapsforge/issues/303
-RUN echo  "load /usr/share/java/xalan2.jar"  >> /usr/local/osmosis/config/plexus.conf \
- && echo "JAVACMD_OPTIONS=-Xmx2G" > /root/.osmosis
+#RUN echo  "load /usr/share/java/xalan2.jar"  >> /usr/local/osmosis/config/plexus.conf \
+# && echo "JAVACMD_OPTIONS=-Xmx2G" > /root/.osmosis
 
 RUN ln -s /usr/local/osmosis/bin/* /usr/bin
 RUN apt-get install -y --no-install-recommends default-jre-headless  \
@@ -32,7 +32,7 @@ RUN apt-get install -y --no-install-recommends default-jre-headless  \
     libcommons-pool-java \
     libjpf-java \
     #libmysql-java \
-    #libnetty-3.9-java \
+    libnetty-java \
     libpostgis-java \
     libpostgresql-jdbc-java \ 
     libspring-beans-java \
