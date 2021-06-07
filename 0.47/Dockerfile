@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-MAINTAINER Rex Tsai "https://about.me/chihchun"
+LABEL maintainer="Iosif Pravets \"https://about.me/chihchun\"
 
 ENV OSMOSIS_VERSION=0.45
 ENV MAPSFORGE_VERSION=0.6.1
@@ -10,12 +10,12 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y --no-install-recommends wget
 
 # Install prebuilt Osmosis
-RUN wget http://bretth.dev.openstreetmap.org/osmosis-build/osmosis-${OSMOSIS_VERSION}.tgz
+RUN wget https://bretth.dev.openstreetmap.org/osmosis-build/osmosis-${OSMOSIS_VERSION}.tgz --no-check-certificate
 RUN mkdir -p /usr/local/osmosis \
  && tar zxvf osmosis-${OSMOSIS_VERSION}.tgz -C /usr/local/osmosis
 # Install Osmosis Mapsforge Map Writer
 
-RUN wget https://repo1.maven.org/maven2/org/mapsforge/mapsforge-map-writer/$MAPSFORGE_VERSION/mapsforge-map-writer-$MAPSFORGE_VERSION-jar-with-dependencies.jar \
+RUN wget https://repo1.maven.org/maven2/org/mapsforge/mapsforge-map-writer/$MAPSFORGE_VERSION/mapsforge-map-writer-$MAPSFORGE_VERSION-jar-with-dependencies.jar --no-check-certificate \
  && mv mapsforge-map-writer-$MAPSFORGE_VERSION-jar-with-dependencies.jar /usr/local/osmosis
 
 
